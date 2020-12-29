@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Museum App</string>
+    <string name="action_retry">Retry</string>
+    <string name="error_message_unable_to_get_art_objects">Unable to get art objects</string>
+    <string name="error_message_unable_to_refresh_art_objects">Unable to refresh art objects</string>
+    <string name="error_message_unable_to_find_art_object">Unable to find art object</string>
+</resources>
