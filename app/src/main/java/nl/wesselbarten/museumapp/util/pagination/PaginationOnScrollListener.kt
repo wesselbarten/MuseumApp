@@ -4,7 +4,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class PaginationOnScrollListener(
-    private val pageSize: Int,
     private val getNextPage: () -> Unit,
     private val isLoading: () -> Boolean
 ) : RecyclerView.OnScrollListener() {
@@ -17,9 +16,8 @@ class PaginationOnScrollListener(
         val totalItemCount = linearLayoutManager.itemCount
         val lastVisibleItem = linearLayoutManager.findLastVisibleItemPosition()
 
-        if (dy > 0 && !isLoading() && totalItemCount <= (lastVisibleItem + pageSize)) {
+        if (dy > 0 && !isLoading() && lastVisibleItem == totalItemCount - 1) {
             getNextPage()
-
         }
     }
 }

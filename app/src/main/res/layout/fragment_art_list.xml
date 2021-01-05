@@ -68,6 +68,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
+                        android:layout_marginBottom="15dp"
                         android:elevation="1dp"
                         android:theme="@style/ProgressbarTheme"
                         android:visibility="gone"

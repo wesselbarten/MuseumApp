@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
-import nl.wesselbarten.museumapp.data.repository.ART_OBJECTS_PAGE_SIZE
 import nl.wesselbarten.museumapp.databinding.FragmentArtListBinding
 import nl.wesselbarten.museumapp.domain.model.ArtObject
 import nl.wesselbarten.museumapp.presentation.artcollection.ArtCollectionNavigationListener
@@ -59,10 +58,8 @@ class ArtListFragment : Fragment(), ArtObjectsAdapter.OnClickListener {
             adapter = artObjectsAdapter
             addItemDecoration(DividerItemDecoration(requireContext()))
             addOnScrollListener(PaginationOnScrollListener(
-                pageSize = ART_OBJECTS_PAGE_SIZE,
-                getNextPage = { viewModel.getNextPage() },
-                isLoading = { viewModel.fetchNextArtObjectsPageAction.value?.peekContent() is FetchNextArtObjectsPageAction.Loading }
-            ))
+                getNextPage = { viewModel.getNextPage() }
+            ) { viewModel.fetchNextArtObjectsPageAction.value?.peekContent() is FetchNextArtObjectsPageAction.Loading })
         }
 
         binding.swipeRefresh.setOnRefreshListener {

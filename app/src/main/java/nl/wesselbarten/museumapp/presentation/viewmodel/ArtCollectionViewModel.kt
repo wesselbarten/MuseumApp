@@ -8,18 +8,16 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import nl.wesselbarten.museumapp.data.ResultWrapper
-import nl.wesselbarten.museumapp.domain.model.ArtObject
-import nl.wesselbarten.museumapp.domain.model.ExtendedArtObject
 import nl.wesselbarten.museumapp.domain.usecase.FetchNextArtObjectsPageUseCase
 import nl.wesselbarten.museumapp.domain.usecase.GetArtObjectByObjectNumberUseCase
 import nl.wesselbarten.museumapp.domain.usecase.GetArtObjectsUseCase
 import nl.wesselbarten.museumapp.domain.usecase.RefreshArtObjectsUseCase
-import nl.wesselbarten.museumapp.presentation.viewmodel.action.FetchNextArtObjectsPageAction
-import nl.wesselbarten.museumapp.presentation.viewmodel.state.GetArtObjectsState
-import nl.wesselbarten.museumapp.presentation.viewmodel.action.RefreshArtObjectsAction
 import nl.wesselbarten.museumapp.presentation.error.ErrorCodes
 import nl.wesselbarten.museumapp.presentation.error.ErrorHandler
+import nl.wesselbarten.museumapp.presentation.viewmodel.action.FetchNextArtObjectsPageAction
+import nl.wesselbarten.museumapp.presentation.viewmodel.action.RefreshArtObjectsAction
 import nl.wesselbarten.museumapp.presentation.viewmodel.state.GetArtObjectByObjectNumberState
+import nl.wesselbarten.museumapp.presentation.viewmodel.state.GetArtObjectsState
 import nl.wesselbarten.museumapp.util.event.Event
 import nl.wesselbarten.museumapp.util.event.toEvent
 
