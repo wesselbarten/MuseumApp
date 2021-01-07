@@ -36,8 +36,8 @@ class ArtDetailFragment : Fragment() {
         subscribeUi()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         Glide.with(this)
             .clear(binding.ivArtObjectImage)
     }
