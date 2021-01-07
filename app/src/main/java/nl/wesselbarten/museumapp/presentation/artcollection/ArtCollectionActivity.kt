@@ -21,11 +21,16 @@ class ArtCollectionActivity : AppCompatActivity(), ArtCollectionNavigationListen
 
     private lateinit var binding: ActivityArtCollectionBinding
 
+    private var initialized = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_art_collection)
 
-        showArtList()
+        if (!initialized) {
+            showArtList()
+            initialized = true
+        }
     }
 
     override fun showArtList() {
