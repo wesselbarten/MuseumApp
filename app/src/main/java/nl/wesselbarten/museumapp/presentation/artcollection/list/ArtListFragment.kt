@@ -34,9 +34,8 @@ class ArtListFragment : Fragment(), ArtObjectsAdapter.OnClickListener {
         try {
             navigationListener = context as ArtCollectionNavigationListener
         } catch (e: ClassCastException) {
-            throw RuntimeException(
-                "Context must implement ${ArtCollectionNavigationListener::class.simpleName}",
-                e
+            throw ClassCastException(
+                "Context must implement ${ArtCollectionNavigationListener::class.simpleName}"
             )
         }
     }
